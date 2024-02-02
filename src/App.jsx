@@ -1,6 +1,6 @@
-import { Bar, Calendars, Contacts, Dashboard, FAQ, Geography, InputForm, Invoices, Line, Pie, SidebarMenu, Team, Topbar, FormulaireElement_Categorie, Login ,Inscription,Deconnexion,FormulaireElement_Modele,FormulaireElement_Carburant,FormulaireElement_Marque,Acceuille } from './pages';
+import { Bar, Calendars, Contacts, Dashboard, FAQ, Geography, InputForm, Invoices, Line, Pie, SidebarMenu, Team, Topbar, FormulaireElementCategorie, Login ,Inscription,Deconnexion,FormulaireElementModele,FormulaireElementCarburant,FormulaireElementMarque,Acceuille } from './pages';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { CssBaseline, ThemeProvider } from '@mui/material'; // reset all default css
+import { CssBaseline, ThemeProvider } from '@mui/material'; 
 import { ColorModeContext, useMode } from './styles/theme';
 import { Outlet } from 'react-router-dom';
 
@@ -31,10 +31,10 @@ const App = () => {
               </main>
             }>
               <Route path="Acceuille" element={<Acceuille />} exact></Route> 
-              <Route path="FormulaireElement_Categorie" element={<FormulaireElement_Categorie />} exact></Route> 
-              <Route path="FormulaireElement_Modele" element={<FormulaireElement_Modele />} exact></Route> 
-              <Route path="FormulaireElement_Carburant" element={<FormulaireElement_Carburant />} exact></Route> 
-              <Route path="FormulaireElement_Marque" element={<FormulaireElement_Marque />} exact></Route> 
+              <Route path="FormulaireElementCategorie" element={<FormulaireElementCategorie />} exact></Route> 
+              <Route path="FormulaireElementModele" element={<FormulaireElementModele />} exact></Route> 
+              <Route path="FormulaireElementCarburant" element={<FormulaireElementCarburant />} exact></Route> 
+              <Route path="FormulaireElementMarque" element={<FormulaireElementMarque />} exact></Route> 
               <Route path="Dashboard" element={<Dashboard />} exact></Route> 
               <Route path="team" element={<Team />} exact></Route>
               <Route path="Deconnexion" element={<Deconnexion />} exact></Route> 

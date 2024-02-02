@@ -21,7 +21,7 @@ const FAQ = () => {
       {
         faq.map(({ id, question, answer }) =>
 
-          id === 1 // by default 1st Accordion open...
+          id === 1 
             ? (
               <Accordion key={id} defaultExpanded>
 

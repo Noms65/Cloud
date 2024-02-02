@@ -1,10 +1,8 @@
 import { Box, Button, Grid,Table, Paper, TableHead, TableBody, TableRow, Typography, TableCell } from "@mui/material";
 
-
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
 import Container from '@mui/material/Container';
-
 
 
 
@@ -34,10 +32,10 @@ export function FormInput() {
                             margin="normal"
                             required
                             fullWidth
-                            name="modele"
-                            label="modele"
-                            type="text"
-                            id="modele"
+                            name="carburant"
+                            label="carburant"
+                            type="carburant"
+                            id="carburant"
                             autoComplete="current-password"
                         />
                         <Button
@@ -67,7 +65,7 @@ function BouttonOption({ onModifyClick, onDeleteClick }) {
                     fontWeight: 'bold',
                     marginRight: '8px',
                 }}
-                onClick={onModifyClick} // Pour le clic sur "Modifier"
+                onClick={onModifyClick} 
             >
                 Modifier
             </Button>
@@ -80,7 +78,7 @@ function BouttonOption({ onModifyClick, onDeleteClick }) {
                     textTransform: 'uppercase',
                     fontWeight: 'bold',
                 }}
-                onClick={onDeleteClick} // Pour le clic sur "Supprimer"
+                onClick={onDeleteClick} 
             >
                 Supprimer
             </Button>
@@ -103,7 +101,7 @@ export function Formulaire() {
         <Grid item xs={12} md={12} lg={12}>
             <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', maxWidth: '100%' }}>
                 <Typography variant="h5" gutterBottom>
-                    Liste Modele
+                    Liste Marque
                 </Typography>
                 <Table size='small'>
                     <TableHead>
@@ -116,12 +114,17 @@ export function Formulaire() {
                     <TableBody>
                         <TableRow>
                             <TableCell>1</TableCell>
-                            <TableCell>4 * 4</TableCell>
+                            <TableCell>Toyota</TableCell>
                             <TableCell><BouttonOption onModifyClick={handleModify} onDeleteClick={handleDelete} /></TableCell>
                         </TableRow>
                         <TableRow>
                             <TableCell>2</TableCell>
-                            <TableCell>Camion</TableCell>
+                            <TableCell>pezotra</TableCell>
+                            <TableCell><BouttonOption onModifyClick={handleModify} onDeleteClick={handleDelete} /></TableCell>
+                        </TableRow>
+                        <TableRow>
+                            <TableCell>3</TableCell>
+                            <TableCell>wagon</TableCell>
                             <TableCell><BouttonOption onModifyClick={handleModify} onDeleteClick={handleDelete} /></TableCell>
                         </TableRow>
                     </TableBody>
@@ -133,14 +136,14 @@ export function Formulaire() {
 
 
 
-const FormulaireElement_Modele = () => {
+const FormulaireElementMarque = () => {
 
     return (
 
         <Box m="100px">
             <Grid container spacing={2}>
                 <Box>
-                    Ajout Modele
+                    Ajout Marque
                 </Box>
                 <FormInput />
                 <Formulaire />
@@ -150,4 +153,4 @@ const FormulaireElement_Modele = () => {
     );
 };
 
-export default FormulaireElement_Modele;
+export default FormulaireElementMarque;

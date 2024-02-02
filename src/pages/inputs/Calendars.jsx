@@ -1,8 +1,8 @@
-import FullCalendar, { formatDate } from '@fullcalendar/react'; // calender component
-import dayGridPlugin from '@fullcalendar/daygrid'; // plugins...
-import timeGridPlugin from '@fullcalendar/timegrid'; // plugins...
-import interactionPlugin from '@fullcalendar/interaction'; // plugins...
-import listPlugin from "@fullcalendar/list"; // plugins...
+import FullCalendar, { formatDate } from '@fullcalendar/react';
+import dayGridPlugin from '@fullcalendar/daygrid'; 
+import timeGridPlugin from '@fullcalendar/timegrid'; 
+import interactionPlugin from '@fullcalendar/interaction'; 
+import listPlugin from "@fullcalendar/list"; 
 import { Box, List, ListItem, ListItemText, Typography, useTheme } from "@mui/material";
 import { tokens } from "../../styles/theme";
 import { Header } from "../../components";
@@ -49,7 +49,7 @@ const Calendars = () => {
 
       <Box display="flex" justifyContent="space-between">
 
-        {/* CALENDAR SIDEBAR */}
+        
         <Box
           p="15px"
           flex="1 1 20%"
@@ -88,7 +88,6 @@ const Calendars = () => {
         </Box>
 
 
-        {/* 📆📅📆📅📆📅📆📅📆📅📆📅 CALENDAR 📆📅📆📅📆📅📆📅📆📅📆📅 */}
         <Box flex="1 1 100%" ml="15px">
 
           <FullCalendar

@@ -1,8 +1,10 @@
-import { Box, Button, Grid, Table, Paper, TableHead, TableBody, TableRow, Typography, TableCell} from "@mui/material";
+import { Box, Button, Grid, Table, Paper, TableHead, TableBody, TableRow, Typography, TableCell } from "@mui/material";
+
 
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
 import Container from '@mui/material/Container';
+
 
 
 
@@ -17,6 +19,7 @@ export function FormInput() {
     };
     return (
 
+        
             <Container component="main" maxWidth="xs">
                 <CssBaseline />
                 <Box
@@ -32,10 +35,10 @@ export function FormInput() {
                             margin="normal"
                             required
                             fullWidth
-                            name="categorie"
-                            label="categorie"
-                            type="text"
-                            id="categorie"
+                            name="carburant"
+                            label="carburant"
+                            type="carburant"
+                            id="carburant"
                             autoComplete="current-password"
                         />
                         <Button
@@ -49,6 +52,7 @@ export function FormInput() {
                     </Box>
                 </Box>
             </Container>
+        
     );
 };
 
@@ -65,7 +69,7 @@ function BouttonOption({ onModifyClick, onDeleteClick }) {
                     fontWeight: 'bold',
                     marginRight: '8px',
                 }}
-                onClick={onModifyClick} // Pour le clic sur "Modifier"
+                onClick={onModifyClick}
             >
                 Modifier
             </Button>
@@ -78,7 +82,7 @@ function BouttonOption({ onModifyClick, onDeleteClick }) {
                     textTransform: 'uppercase',
                     fontWeight: 'bold',
                 }}
-                onClick={onDeleteClick} // Pour le clic sur "Supprimer"
+                onClick={onDeleteClick}
             >
                 Supprimer
             </Button>
@@ -101,7 +105,7 @@ export function Formulaire() {
         <Grid item xs={12} md={12} lg={12}>
             <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', maxWidth: '100%' }}>
                 <Typography variant="h5" gutterBottom>
-                    Liste Categorie
+                    Liste Carburant
                 </Typography>
                 <Table size='small'>
                     <TableHead>
@@ -114,12 +118,12 @@ export function Formulaire() {
                     <TableBody>
                         <TableRow>
                             <TableCell>1</TableCell>
-                            <TableCell>Sport</TableCell>
+                            <TableCell>Diesel</TableCell>
                             <TableCell><BouttonOption onModifyClick={handleModify} onDeleteClick={handleDelete} /></TableCell>
                         </TableRow>
                         <TableRow>
                             <TableCell>2</TableCell>
-                            <TableCell>Salon</TableCell>
+                            <TableCell>Essence</TableCell>
                             <TableCell><BouttonOption onModifyClick={handleModify} onDeleteClick={handleDelete} /></TableCell>
                         </TableRow>
                     </TableBody>
@@ -131,14 +135,14 @@ export function Formulaire() {
 
 
 
-const FormulaireElement_Categorie = () => {
+const FormulaireElementCarburant = () => {
 
     return (
 
         <Box m="100px">
             <Grid container spacing={2}>
                 <Box>
-                    Ajout Categorie
+                    Ajout Carburant
                 </Box>
                 <FormInput />
                 <Formulaire />
@@ -148,4 +152,4 @@ const FormulaireElement_Categorie = () => {
     );
 };
 
-export default FormulaireElement_Categorie;
+export default FormulaireElementCarburant;

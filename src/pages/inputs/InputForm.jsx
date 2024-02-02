@@ -11,10 +11,8 @@ const InputForm = () => {
 
   const isNonMobile = useMediaQuery("(min-width:600px)");
 
-  // user click | data send to server OR do some action...
   const handleFormSubmit = (values, onSubmitProps) => {
 
-    // 🧹🧹🧹 Form Fields are Reset by Formik lib...
     onSubmitProps.resetForm()
 
     alert(
