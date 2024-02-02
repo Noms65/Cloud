@@ -1,10 +1,7 @@
-import * as React from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
 import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
@@ -12,8 +9,7 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 
 
@@ -36,7 +32,7 @@ const Login = () => {
       headers: {
         'Content-Type': 'application/json',
       },
-      mode: 'cors',
+      // mode: 'cors',
       body: JSON.stringify({
         email,
         password,
@@ -86,6 +82,7 @@ const Login = () => {
               required
               fullWidth
               id="email"
+              onChange={(e) => setEmail(e.target.value)}
               // label="Email Address"
               name="email"
               autoComplete="email"
@@ -97,6 +94,7 @@ const Login = () => {
               required
               fullWidth
               name="password"
+              onChange={(e) => setPassword(e.target.value)}
               // label="Password"
               value={'liantsiky'}
               type="password"

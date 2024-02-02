@@ -1,16 +1,4 @@
-import { Header, GeographyChart, ProgressCircle, LineChart, BarChart, StatBox } from "../components";
-import { Box, Button, Grid, IconButton, Paper, Typography, useTheme } from "@mui/material";
-import { mockTransactions } from "../constants/mockData";
-import { tokens } from "../styles/theme";
-import DownloadOutlinedIcon from "@mui/icons-material/DownloadOutlined";
-import PointOfSaleIcon from "@mui/icons-material/PointOfSale";
-import PersonAddIcon from "@mui/icons-material/PersonAdd";
-import TrafficIcon from "@mui/icons-material/Traffic";
-import EmailIcon from "@mui/icons-material/Email";
-import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
-import { Description } from "@mui/icons-material";
-import { useState,useEffect } from "react";
-
+import { Box, Button, Grid, Paper } from "@mui/material";
 
 export function CarAnnonce({ image, Titre, description, date }) {
   return (
@@ -76,11 +64,6 @@ export function CarAnnonce({ image, Titre, description, date }) {
 
 
 const Dashboard = () => {
-
-  const theme = useTheme();
-  const colors = tokens(theme.palette.mode);
-
-  
 
   return (
     <Box m="100px">
