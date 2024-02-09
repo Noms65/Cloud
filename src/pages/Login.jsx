@@ -1,3 +1,4 @@
+import * as React from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -23,35 +24,42 @@ const Login = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
+  
     console.log('Email:', email);
     console.log('Password:', password);
+  
+    try {
+      const response = await fetch('https://autotrader-production-a56f.up.railway.app/api/auth/login', {
+        
+        method: 'POST', // Utilisez la méthode POST
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email,
+          password,
+        }),
+      });
+  
+      if (response.ok) {
+        
+        const responseData = await response.json();
+        const userToken = responseData.accessToken;
 
-    const response = await fetch('https://autotrader-production.up.railway.app/api/auth/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      // mode: 'cors',
-      body: JSON.stringify({
-        email,
-        password,
-      }),
-    });
-
-    if (response.ok) {
-      const responseData = await response.json();
-      const userToken = responseData.token;
-
-      console.log(userToken);
-      // Stockez le token dans le localStorage
-      localStorage.setItem('token', userToken);
-
-      // Redirigez l'utilisateur vers la page d'accueil ou faites autre chose
-      navigate('/Acceuille');
-
-    } else {
-      console.error('Erreur d\'authentification');
+        console.log(responseData);
+  
+        console.log(userToken);
+        // Stockez le token dans le localStorage
+        localStorage.setItem('token', userToken);
+  
+        // Redirigez l'utilisateur vers la page d'accueil ou faites autre chose
+        navigate('/Acceuille');
+  
+      } else {
+        console.error('Erreur d\'authentification');
+      }
+    } catch (error) {
+      console.error('Erreur lors de la requête:', error);
     }
   };
 
@@ -101,10 +109,6 @@ const Login = () => {
               id="password"
               autoComplete="current-password"
             />
-            {/* <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
-              label="Remember me"
-            /> */}
             <Button
               type="submit"
               fullWidth
@@ -115,8 +119,8 @@ const Login = () => {
             </Button>
             <Grid container>
               <Grid item xs>
-                <Link href="#" variant="body2">
-                  Forgot password?
+                <Link href="/" variant="body2">
+                  annuler
                 </Link>
               </Grid>
               <Grid item>
